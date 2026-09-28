@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #faf8f4;
+  --color-surface: #ffffff;
+  --color-line: #e4ded3;
+  --color-ink: #1f1d1a;
+  --color-ink-muted: #6b665e;
+  --color-primary: #3b5bdb;
+  --color-on-primary: #ffffff;
+  --color-danger: #c92a2a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-canvas: #1b1a18;
+    --color-surface: #262522;
+    --color-line: #3a3834;
+    --color-ink: #ece8e1;
+    --color-ink-muted: #a39e95;
+    --color-primary: #7c93f0;
+    --color-on-primary: #14172a;
+    --color-danger: #ff8787;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  width: 380px;
+  height: 540px;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+#app {
+  height: 100%;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  padding: 6px 8px;
+  outline: none;
+}
+.field:focus {
+  border-color: var(--color-primary);
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.btn-ghost {
+  color: var(--color-ink-muted);
+}
+.btn-ghost:hover {
+  color: var(--color-ink);
+  background: var(--color-line);
+}
+
+.card {
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: var(--color-surface);
+  padding: 8px 10px;
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+}
+.icon-btn:hover {
+  color: var(--color-ink);
+  background: var(--color-line);
+}
